@@ -1,85 +1,103 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const projects = [
   {
-    num: '01',
+    category: '01 / AGRITECH PLATFORM',
     name: 'Bajoma',
-    desc: 'Agricultural marketplace connecting farmers directly to buyers across African markets. Designed for low bandwidth, high trust.',
-    tags: ['Product Design', 'UI', 'UX Research'],
+    desc: 'Commercial wholesale standardizing the food supply chain across African markets.',
+    role: 'Lead Product Designer',
+    platform: 'Web, Mobile (USSD)',
     link: '#/bajoma',
+    imageType: 'laptop', // styling flag
   },
   {
-    num: '02',
+    category: '02 / B2B SAAS',
     name: 'Projina',
-    desc: 'Company management system for employees and internal operations. Built for clarity and team efficiency.',
-    tags: ['Web Design', 'SaaS', 'Systems'],
+    desc: 'Centralized workspace platform streamlining HR management and internal ops.',
+    role: 'Product Designer',
+    platform: 'Web App',
     link: '#/projina',
+    imageType: 'dashboard',
   },
   {
-    num: '03',
+    category: '03 / AGENCY WEBSITE',
     name: 'Crestlancing',
-    desc: 'Modern company website redesign focused on clarity and conversion. From wireframe to polished final design.',
-    tags: ['Branding', 'Web UI', 'Prototyping'],
-    link: '#/crestlancing', // future placeholder
+    desc: 'Modern company website redesign focused on clarity and conversion.',
+    role: 'UI Designer',
+    platform: 'Web',
+    link: '#/crestlancing',
+    imageType: 'website',
   },
 ];
 
 const processSteps = [
   {
     title: 'Research',
-    desc: 'Deep diving into user needs and market constraints. Identifying the core problem before any solution.',
+    subtitle: 'Understanding the constraints',
+    desc: 'Deep diving into user needs, market constraints, and hardware limitations before drafting a single screen.',
     icon: (
-      <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-    )
+      <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+    ),
+    badge: ''
   },
   {
     title: 'Strategy',
-    desc: 'Defining the product roadmap and core functionality. Ensuring alignment with business goals.',
+    subtitle: 'Mapping the system',
+    desc: 'Defining the product roadmap, user flows, and core functionality. Ensuring alignment with business goals.',
     icon: (
-      <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-    )
+      <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+    ),
+    badge: 'Built mapped for scale'
   },
   {
     title: 'Design',
-    desc: 'Iterative prototyping and high-fidelity UI. Designing for accessibility and African context.',
+    subtitle: 'System and interfaces',
+    desc: 'Iterative prototyping, component architecture, and high-fidelity UI design tailored for the reality of the user.',
     icon: (
-      <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
-    )
+      <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>
+    ),
+    badge: ''
   },
   {
     title: 'Delivery',
-    desc: 'Development handoff and quality assurance. Making sure the final product matches the vision.',
+    subtitle: 'Handoff and QA',
+    desc: 'Precise development handoff, specs documentation, and QA sessions to guarantee exact implementation.',
     icon: (
-      <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-    )
+      <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+    ),
+    badge: ''
   },
 ];
 
 export default function HomePage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <nav className="navbar">
+      <nav className="navbar exact-navbar">
         <div className="container nav-inner">
-          <a href="#/home" className="logo">Bah Clarkson.</a>
+          <a href="#/home" className="logo">BAH CLARKSON</a>
           <ul className="nav-links">
-            <li><a href="#work">Work</a></li>
-            <li><a href="#process">Process</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact" className="nav-cta">Get in touch</a></li>
+            <li><a href="#work">WORK</a></li>
+            <li><a href="#process">PROCESS</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
           </ul>
         </div>
       </nav>
 
       <section className="hero-section" id="home">
-        <div className="container hero-inner">
+        <div className="container hero-inner exact-hero-inner">
           <div className="hero-content">
-            <div className="hero-badge">Product Designer & Systems Builder</div>
-            <h1 className="hero-title">Bah<br />Clarkson</h1>
-            <p className="hero-subtitle">
+            <div className="hero-badge exact-badge">DESIGN SYSTEMS & PRODUCT STRATEGY</div>
+            <h1 className="hero-title exact-title">Bah<br />Clarkson.</h1>
+            <p className="hero-subtitle exact-subtitle">
               Building digital systems that work for the realities most products ignore. Rooted in African context. Designed with intention.
             </p>
             <div className="hero-actions">
-              <a href="#contact" className="btn-primary">Work with me</a>
+              <a href="#contact" className="btn-primary exact-btn">Let's work together</a>
               <a href="#work" className="hero-link">See my projects →</a>
             </div>
           </div>
@@ -87,38 +105,44 @@ export default function HomePage() {
             <div className="hero-photo-arched">
                <img src="/profile.jpg" alt="Bah Clarkson" />
             </div>
-            <div className="hero-status">
-              <div className="status-dot"></div>
-              <span>Available for work</span>
-            </div>
           </div>
+          <div className="scroll-indicator">SCROLL</div>
         </div>
       </section>
 
-      <section className="projects-section" id="work">
+      <section className="projects-section exact-projects-bg" id="work">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header exact-header">
+            <span className="section-label-tiny">SELECTED WORK</span>
             <h2 className="section-title">Projects</h2>
             <p className="section-desc">Practical solutions for real world problems, designed with high intent.</p>
           </div>
-          <div className="projects-list">
+          <div className="projects-list exact-list">
             {projects.map((project, idx) => (
-              <div key={idx} className={`project-item ${idx % 2 === 1 ? 'reverse' : ''}`}>
-                <div className="project-image-box">
-                   <div className="project-img-placeholder" style={{ backgroundColor: '#1e293b' }}>
-                     <div className="placeholder-text">{project.name} Visual</div>
-                     {/* Replace with <img src={project.image} alt={project.name}/> appropriately */}
-                   </div>
+              <div key={idx} className={`project-item exact-project-item ${idx % 2 === 1 ? 'reverse' : ''}`}>
+                <div className="project-image-box" style={{ background: project.imageType === 'laptop' ? '#091533' : project.imageType === 'dashboard' ? '#111827' : '#F3F4F6' }}>
+                   {/* Placeholder matching the exact visual style */}
+                   {project.imageType === 'laptop' && <div className="mock-img laptop-mock"></div>}
+                   {project.imageType === 'dashboard' && <div className="mock-img dashboard-mock"></div>}
+                   {project.imageType === 'website' && <div className="mock-img web-mock"></div>}
                 </div>
                 <div className="project-info-box">
-                  <span className="project-num">{project.num} — {project.tags[0]}</span>
+                  <div className="project-category">{project.category}</div>
                   <h3 className="project-name">{project.name}</h3>
                   <p className="project-description">{project.desc}</p>
-                  <div className="project-tags">
-                    {project.tags.map((tag, i) => (
-                      <span key={i} className="tag">{tag}</span>
-                    ))}
+                  
+                  <div className="project-meta-grid">
+                     <div>
+                        <div className="meta-label">Role</div>
+                        <div className="meta-value">{project.role}</div>
+                     </div>
+                     <div>
+                        <div className="meta-label">Platform</div>
+                        <div className="meta-value">{project.platform}</div>
+                     </div>
                   </div>
+                  
+                  <div className="project-divider"></div>
                   <a href={project.link} className="project-view-link">View Project →</a>
                 </div>
               </div>
@@ -127,76 +151,88 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="process-section" id="process">
+      <section className="process-section exact-process" id="process">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header exact-header">
+            <span className="section-label-tiny">HOW I APPROACH PROBLEMS</span>
             <h2 className="section-title">Process</h2>
             <p className="section-desc">I systematically break down problems before designing any solution. Here is my standard workflow for most projects.</p>
           </div>
-          <div className="process-bento-grid">
+          <div className="process-bento-grid exact-bento">
             {processSteps.map((step, idx) => (
-              <div key={idx} className="bento-card">
+              <div key={idx} className="bento-card exact-bento-card">
+                {step.badge && <div className="bento-floating-badge">{step.badge}</div>}
                 <div>
                   <h3 className="bento-card-title">{step.title}</h3>
+                  <div className="bento-card-subtitle">{step.subtitle}</div>
                   <p className="bento-card-desc">{step.desc}</p>
                 </div>
-                <div className="bento-icon">{step.icon}</div>
+                <div className="bento-icon exact-bento-icon">{step.icon}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="about-section" id="about">
-        <div className="container about-inner">
-           <div className="about-visual">
-             <div className="about-photo-arched">
+      <section className="about-section exact-about" id="about">
+        <div className="container about-inner exact-about-inner">
+           <div className="about-text-side">
+             <span className="section-label-tiny">ABOUT ME</span>
+             <h2 className="about-title">I care about building digital experiences that people actually want to use.</h2>
+           </div>
+           <div></div> {/* empty grid spacer if needed, per design */}
+           
+           <div className="about-visual-container">
+             {/* Abstract Shapes */}
+             <div className="shape shape-star">★</div>
+             <div className="shape shape-squiggle">〰</div>
+             
+             <div className="about-photo-arched custom-smaller-arch">
                 <img src="/profile.jpg" alt="Bah Clarkson" />
              </div>
            </div>
-           <div className="about-content">
-             <h2 className="about-title">I care about building digital experiences that people actually want to use.</h2>
+           
+           <div className="about-content accordion-side">
              <p className="about-text">
-               I'm a Product Designer based in Africa, specializing in creating systems that are functional, accessible, and grounded in the specific needs of local users.
+               Based in Africa, I design digital products tailored for the next billion users. I strongly believe that good design solves real problems within actual constraints, not hypothetical ideals.
              </p>
-             <div className="about-philosophy">
-               <div className="philosophy-item active">
+             <div className="exact-accordion-box">
+               <div className="philosophy-item">
                  <div className="phi-header"><span>Trust over beauty</span><span>+</span></div>
                </div>
-               <div className="philosophy-item">
+               <div className="philosophy-item border-top">
                  <div className="phi-header"><span>Bandwidth as a constraint</span><span>+</span></div>
                </div>
-               <div className="philosophy-item">
-                 <div className="phi-header"><span>Design for reality</span><span>+</span></div>
+               <div className="philosophy-item border-top">
+                 <div className="phi-header"><span>Design for the reality, not the ideal</span><span>+</span></div>
+               </div>
+               <div className="philosophy-item border-top">
+                 <div className="phi-header"><span>Systems before screens (UI follows UX)</span><span>+</span></div>
                </div>
              </div>
            </div>
         </div>
       </section>
 
-      <div className="marquee">
-        <div className="marquee-content">
-          <span>PRODUCT DESIGNER • UI/UX • SYSTEMS THINKING • RESEARCH • </span>
-          <span>PRODUCT DESIGNER • UI/UX • SYSTEMS THINKING • RESEARCH • </span>
-          <span>PRODUCT DESIGNER • UI/UX • SYSTEMS THINKING • RESEARCH • </span>
-          <span>PRODUCT DESIGNER • UI/UX • SYSTEMS THINKING • RESEARCH • </span>
-        </div>
-      </div>
+      {/* Solid yellow transition line/band */}
+      <div className="solid-yellow-band"></div>
 
-      <footer className="footer-section" id="contact">
+      <footer className="footer-section exact-contact" id="contact">
         <div className="container footer-inner">
           <div className="contact-main">
+             <span className="section-label-tiny">GET IN TOUCH</span>
              <h2 className="footer-title">Let's work<br /><span className="text-yellow">together.</span></h2>
-             <form className="contact-form">
+             
+             <form className="contact-form exact-form">
                <div className="form-row">
-                 <input type="text" placeholder="Name *" required />
-                 <input type="email" placeholder="Email *" required />
+                 <input type="text" placeholder="Name *" className="line-input" required />
+                 <input type="email" placeholder="Email *" className="line-input" required />
                </div>
-               <textarea placeholder="Tell me about your project" required></textarea>
-               <button type="submit" className="btn-primary">Work with me</button>
+               <textarea placeholder="Tell me about your project" className="line-input" required></textarea>
+               <button type="submit" className="btn-primary" style={{ alignSelf: 'flex-start', marginTop: '1rem' }}>Let's work together</button>
              </form>
           </div>
-          <div className="footer-socials">
+          <div className="footer-socials exact-social-area">
              <div className="social-column">
                <h4>Let's Connect</h4>
                <a href="#!" onClick={(e) => e.preventDefault()}>Twitter</a>
@@ -208,8 +244,8 @@ export default function HomePage() {
                <a href="mailto:bahclarkson44@gmail.com">bahclarkson44@gmail.com</a>
                <p>Lagos, Nigeria</p>
                <br />
-               <h4>Available</h4>
-               <p>For freelance work</p>
+               <h4>Status</h4>
+               <p style={{ color: '#FFDC00' }}>Available for freelance work</p>
              </div>
           </div>
         </div>
@@ -220,21 +256,25 @@ export default function HomePage() {
                Product designer — Based in Africa, building digital<br/>
                experiences for the next billion users.
              </p>
-             <div className="footer-copy">© 2026 Bah Clarkson.</div>
+             <div className="footer-copy">© 2023 Bah Clarkson.</div>
            </div>
            <div className="footer-links-grid">
                <div className="footer-link-col">
                    <h4>Nav</h4>
                    <a href="#/home">Home</a>
                    <a href="#work">Projects</a>
+                   <a href="#process">Process</a>
                    <a href="#about">About</a>
-                   <a href="#contact">Contact</a>
                </div>
                <div className="footer-link-col">
                    <h4>Socials</h4>
                    <a href="#!" onClick={(e) => e.preventDefault()}>Twitter</a>
                    <a href="#!" onClick={(e) => e.preventDefault()}>LinkedIn</a>
                    <a href="#!" onClick={(e) => e.preventDefault()}>Github</a>
+               </div>
+               <div className="footer-link-col">
+                   <h4>Legal</h4>
+                   <a href="#!">Privacy Policy</a>
                </div>
            </div>
         </div>
